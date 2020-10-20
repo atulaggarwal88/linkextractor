@@ -8,4 +8,6 @@ RUN        pip install -r requirements.txt
 COPY       *.py /app/
 RUN        chmod a+x *.py
 
-CMD        ["./main.py"]
+
+ENV FLASK_APP=main:app
+CMD ["flask", "run", "--host", "0.0.0.0"]
